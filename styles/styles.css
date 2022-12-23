@@ -388,16 +388,16 @@ button{
     margin-right: 24px;
     border: 0.5px solid var(--light-mode-color);
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+
+    transition: border 250ms var(--transition-dur-and-func), box-shadow 250ms var(--transition-dur-and-func),
+     transform 250ms var(--transition-dur-and-func);
 }
 .gallery-list-item:hover, .gallery-list-item:focus {
     border: 0.5px solid var(--light-mode-color);
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-    
-    transition: 250ms var(--transition-dur-and-func);
 }
 .gallery-list-item:hover .overlay{
     transform: translate(0, 0);
-    transition: 250ms var(--transition-dur-and-func);
 }
 .gallery{
     padding-top: 96px;
@@ -441,6 +441,8 @@ button{
 
     overflow: auto;
     transform: translate(0, 100%);
+
+    transition: transform 250ms var(--transition-dur-and-func)
 }
                                     /* CUSTOMERS */
 .customers-list{
@@ -459,6 +461,8 @@ button{
     border-radius: 4px; 
     border: 1px solid var(--helper-text-color);
     border-radius: 4px;
+
+    transition: border 250ms var(--transition-dur-and-func);
 }
 .customers-list-item:not(:last-child){
     margin-right: 24px;
@@ -466,21 +470,18 @@ button{
 
 .customers-list-link:hover, .customers-list-link:focus{
     border: 1px solid var(--primary-brand-color);
-
-    transition: 250ms var(--transition-dur-and-func);
 }
 .customers-icon{
     fill: var(--helper-text-color);
     width: 168px;
     height: 88px;
     padding: 16px 32px;
+
+    transition: fill 250ms var(--transition-dur-and-func)
 }
 .customers-icon:hover, .customers-icon:focus{
     fill:var(--primary-brand-color);
-
-    transition: 250ms var(--transition-dur-and-func);
 }
-
                                         /* FOOTER */
 .footer-text {
     font-size: 16px;
