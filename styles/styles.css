@@ -1,4 +1,4 @@
-/* GENERAL */
+                                        /* GENERAL */
 :root {
     --primary-brand-color: #4D5AE5;
     --shadow-headings-color: #2E2F42;
@@ -9,13 +9,15 @@
     --light-mode-color: #F4F4FD;
     --light-background-color: #FFFFFF;
     --hero-button-click: #404BBF;
+    --modal-window-bg: #FCFCFC;
+    --transition-dur-and-func: cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--body-text-color);
     margin: 0;
 }
-/* STYLES RESET */
+                                        /* STYLES RESET */
 h1, h2, h3, h4, h5, h6, p{
     margin-top: 0;
     margin-bottom: 0;
@@ -40,7 +42,7 @@ button{
     padding-left: 15px;
     padding-right: 15px;
 }
-/* HEADER */
+                                            /* HEADER */
 .logo, .nav-list-item-link, .contact-item-link {
     text-decoration: none;
 }
@@ -70,12 +72,16 @@ button{
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--shadow-headings-color);
+
+    transition: color 250ms var(--transition-dur-and-func), text-shadow 250ms var(--transition-dur-and-func);
 }
 .contact-item-link {
     font-size: 16px;
     line-height: 1.5;
     color: var(--body-text-color);
     text-decoration: none;
+
+    transition: color 250ms var(--transition-dur-and-func), text-shadow 250ms var(--transition-dur-and-func);
 }
 .nav-list, .contact-list, .button-filters-list, .gallery-list, .principles-section-list, .what-we-are-doing-list, .our-team-list {
     list-style: none;
@@ -113,8 +119,26 @@ button{
 .current{
     color: var(--primary-brand-color);
 }
-/* BUTTON-FILTERS */
+.underline-portfolio::after{
+    content: '';
+    display: block;
+    width: 66px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--primary-brand-color); 
+    margin: 0 auto;
+}
+.underline-studio::after{
+    content: '';
+    display: block;
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--primary-brand-color); 
+    margin: 0 auto; 
+}
 
+                                        /* BUTTON-FILTERS */
 .button-filter {
     font-family: inherit;
     font-weight: 600;
@@ -126,6 +150,9 @@ button{
     border: none;
     border-radius: 4px;
     padding: 12px 24px;
+
+    transition: background-color 250ms var(--transition-dur-and-func), color 250ms var(--transition-dur-and-func), 
+    border 250ms var(--transition-dur-and-func), box-shadow 250ms var(--transition-dur-and-func);
 }
 .button-filter:hover, .button-filter:focus, .button-filter-active {
     background-color: var(--primary-brand-color);
@@ -155,8 +182,9 @@ button{
     line-height: 1.18;
     letter-spacing: 0.04em;
     color: var(--light-background-color);
+    transition: box-shadow 250ms var(--transition-dur-and-func), background-color 250ms var(--transition-dur-and-func);
    }
-/* HERO */
+                                            /* HERO */
 .hero-section-title {    
     font-weight: 600;
     font-size: 56px;
@@ -188,7 +216,7 @@ button{
     justify-items: center;
 }
 
-/* PRINCIPLES */
+                                            /* PRINCIPLES */
 .principles-section-list-item-header {
     font-weight: 600;
     font-size: 20px;
@@ -225,7 +253,7 @@ button{
     background-color: var(--light-mode-color);
     border-radius: 4px;
 }
-/* WHAT WE ARE DOING */
+                                        /* WHAT WE ARE DOING */
 .what-we-are-doing-header, .our-team-header, .customers-header {
     font-weight: 600;
     font-size: 36px;
@@ -238,7 +266,6 @@ button{
 .what-we-are-doing{
     padding-bottom: 120px;
 }
-
 .what-we-are-doing-div {
     display: flex;
     flex-direction: column;
@@ -254,7 +281,7 @@ button{
 .img-doing-item{
     width: calc((100% - 24px * 2) / 3);
 }
-/* OUR TEAM */
+                                                /* OUR TEAM */
 .our-team-list-item-header{
     font-weight: 600;
     font-size: 20px;
@@ -323,12 +350,14 @@ button{
     border-radius: 50%;
     background-color: var(--primary-brand-color);
 
+    transition: box-shadow 250ms var(--transition-dur-and-func), background-color 250ms var(--transition-dur-and-func);
+
 }
 .social-icon{
     fill: var(--light-mode-color);
 }
 
-/* GALLERY */
+                                        /* GALLERY */
 .gallery-list-title{
     font-weight: 600;
     font-size: 20px;
@@ -363,10 +392,12 @@ button{
 .gallery-list-item:hover, .gallery-list-item:focus {
     border: 0.5px solid var(--light-mode-color);
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    
+    transition: 250ms var(--transition-dur-and-func);
 }
 .gallery-list-item:hover .overlay{
     transform: translate(0, 0);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 250ms var(--transition-dur-and-func);
 }
 .gallery{
     padding-top: 96px;
@@ -379,7 +410,7 @@ button{
 
 .gallery-list{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
     margin-right: -24px;
     margin-bottom: -48px;
 }
@@ -411,7 +442,7 @@ button{
     overflow: auto;
     transform: translate(0, 100%);
 }
-/* CUSTOMERS */
+                                    /* CUSTOMERS */
 .customers-list{
     list-style-type: none;
     display: flex;
@@ -435,6 +466,8 @@ button{
 
 .customers-list-link:hover, .customers-list-link:focus{
     border: 1px solid var(--primary-brand-color);
+
+    transition: 250ms var(--transition-dur-and-func);
 }
 .customers-icon{
     fill: var(--helper-text-color);
@@ -444,9 +477,11 @@ button{
 }
 .customers-icon:hover, .customers-icon:focus{
     fill:var(--primary-brand-color);
+
+    transition: 250ms var(--transition-dur-and-func);
 }
 
-/* FOOTER */
+                                        /* FOOTER */
 .footer-text {
     font-size: 16px;
     line-height: 24px;
@@ -499,6 +534,8 @@ button{
     height: 40px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
+
+    transition: box-shadow 250ms var(--transition-dur-and-func), background-color 250ms var(--transition-dur-and-func);
 }
 .social-list-link-footer:hover, 
 .social-list-link-footer:focus,
@@ -506,6 +543,61 @@ button{
 .social-list-link:focus
 {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background: var(--success-color);
+    background-color: var(--success-color);
+}
+                                    /* MODAL WINDOW */
+.backdrop{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
 
+    transition: opacity 250ms var(--transition-dur-and-func), visibility 250ms var(--transition-dur-and-func);
+}
+.modal-window{
+    width: 408px;
+    height: 576px;
+    background-color: var(--modal-window-bg);
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.modal-window-close-icon{
+    width: 8px;
+    height: 8px;
+}
+.modal-close-btn{
+    background-color: var(--accent-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    transition: box-shadow 250ms var(--transition-dur-and-func), border 250ms var(--transition-dur-and-func);
+}
+.modal-close-btn:hover, .modal-close-btn:focus{
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    border:transparent;
+}
+.backdrop.is-hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }

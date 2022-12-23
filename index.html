@@ -17,7 +17,7 @@
             <nav class="nav-section">
                 <a class="logo" href="./index.html">Web<span class="logo-studio-up">Studio</span></a>
                 <ul class="nav-list">
-                    <li class="nav-list-item"><a class="nav-list-item-link current" href="./index.html">Studio</a></li>
+                    <li class="nav-list-item"><a class="nav-list-item-link current underline-studio" href="./index.html">Studio</a></li>
                     <li class="nav-list-item"><a class="nav-list-item-link" href="./portfolio.html">Portfolio</a></li>
                     <li class="nav-list-item"><a class="nav-list-item-link" href="#">Contacts</a></li>
                 </ul>
@@ -35,7 +35,7 @@
         <section class="hero-section background">
             <div class="container hero-section-div">
                 <h1 class="hero-section-title">Effective Solutions<br>for Your Business</h1>
-                <button class="hero-button">Order Service</button>
+                <button class="hero-button" data-modal-open>Order Service</button>
             </div>
         </section>
         <!-- principles section -->
@@ -346,7 +346,17 @@
                 </li>
             </ul>      
         </div>
-    </div>
 </footer>
+<div class="backdrop is-hidden" data-modal>
+    <div class="modal-window">
+        <button type="button" class="modal-close-btn" data-modal-close>
+            <svg class="modal-window-close-icon">
+                <use href="./images/svg/sprite-svg.svg#icon-close"></use>
+            </svg>
+        </button>
+
+    </div>
+</div>
+<script src="./js/modal.js"></script>
 </body>
 </html>
